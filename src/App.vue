@@ -51,10 +51,10 @@ export default {
   margin: auto;
 }
 
-/** Remove these styles when done */
 .premium-recipe-wrapper {
-  margin-top: 100px;
-  border: 2px dashed red;
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
   padding: 16px;
 }
 </style>
