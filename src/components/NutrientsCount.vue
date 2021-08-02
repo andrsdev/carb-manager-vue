@@ -58,6 +58,6 @@ export default {
 }
 
 .yellow {
-  background-color: #FDA120;
+  background-color: #fda120;
 }
 </style>

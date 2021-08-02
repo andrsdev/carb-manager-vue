@@ -4,6 +4,13 @@
       <img class="header__img" :src="data.image" :alt="data.title" />
       <div class="header__overlay"></div>
       <img
+        v-show="isFavorite"
+        class="header__heart-icon"
+        alt="heart-button"
+        src="../assets/heart-filled.svg"
+      />
+      <img
+        v-show="!isFavorite"
         class="header__heart-icon"
         alt="heart-button"
         src="../assets/heart-outline.svg"
@@ -48,6 +55,12 @@ export default {
   components: {
     StarRating,
     NutrientsCount
+  },
+
+  props: {
+    isFavorite: {
+      type: Boolean
+    }
   },
 
   data() {
