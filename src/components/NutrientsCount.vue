@@ -6,11 +6,11 @@
     </div>
     <div class="nutrient">
       <div class="dot blue" />
-      <span>{{ this.fats }}g</span>
+      <span>{{ this.proteins }}g</span>
     </div>
     <div class="nutrient">
       <div class="dot yellow" />
-      <span>{{ this.proteins }}g</span>
+      <span>{{ this.fats }}g</span>
     </div>
   </div>
 </template>
