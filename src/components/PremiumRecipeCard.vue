@@ -19,16 +19,35 @@
         <StarRating :score="data.rating.score" />
         <span class="rating__count">{{ data.rating.count }} ratings</span>
       </div>
+      <div class="details">
+        <div class="icon_detail">
+          <img alt="clock icon" src="../assets/clock.svg" />
+          <span>{{ data.preparationTimeMinutes }} min</span>
+        </div>
+        <div class="icon_detail">
+          <img alt="calories icon" src="../assets/cals.svg" />
+          <span>{{ data.energy }} Calories</span>
+        </div>
+        <div class="nutrients">
+          <NutrientsCount
+            :carbs="data.nutrients.carbs"
+            :fats="data.nutrients.fats"
+            :proteins="data.nutrients.proteins"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import StarRating from "./StarRating.vue";
+import NutrientsCount from "./NutrientsCount.vue";
 
 export default {
   components: {
-    StarRating
+    StarRating,
+    NutrientsCount
   },
 
   data() {
@@ -149,7 +168,37 @@ export default {
 
 .rating__count {
   margin-left: 8px;
+  font-size: 14px;
   font-weight: 500;
-  color: #1CA677;
+  color: #1ca677;
+}
+
+.details {
+  margin-top: 6px;
+  display: flex;
+  font-size: 12px;
+}
+
+.icon_detail {
+  display: flex;
+  align-items: center;
+}
+
+.icon_detail ~ .icon_detail {
+  margin-left: 16px;
+}
+
+.icon_detail > img {
+  height: 16px;
+}
+
+.icon_detail > span {
+  margin-left: 6px;
+}
+
+.nutrients {
+  margin-left: auto;
+  font-weight: 500;
+  color: #6f737a;
 }
 </style>
