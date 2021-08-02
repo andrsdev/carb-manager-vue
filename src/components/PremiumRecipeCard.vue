@@ -29,7 +29,7 @@
       <div class="details">
         <div class="icon_detail">
           <img alt="clock icon" src="../assets/clock.svg" />
-          <span>{{ data.preparationTimeMinutes }} min</span>
+          <span>{{ formatTime(data.preparationTimeMinutes) }}</span>
         </div>
         <div class="icon_detail">
           <img alt="calories icon" src="../assets/cals.svg" />
@@ -57,6 +57,7 @@
 import StarRating from "./StarRating.vue";
 import NutrientsCount from "./NutrientsCount.vue";
 import { caloriesToKilojoules } from "../utils/caloresToKilojoules";
+import { formatTime } from "../utils/formatTime";
 
 export default {
   components: {
@@ -95,7 +96,8 @@ export default {
         this.error = error;
       }
     },
-    caloriesToKilojoules
+    caloriesToKilojoules,
+    formatTime
   },
 
   created() {
