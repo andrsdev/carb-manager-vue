@@ -1,5 +1,5 @@
 import { action } from "@storybook/addon-actions";
-import { withKnobs, boolean } from "@storybook/addon-knobs";
+import { withKnobs, boolean, select } from "@storybook/addon-knobs";
 
 import PremiumRecipeCard from "../src/components/PremiumRecipeCard.vue";
 
@@ -16,8 +16,12 @@ export const Default = () => ({
     isFavorite: {
       default: boolean("isFavorite", false),
     },
+    energyUnits: {
+      default: select("energyUnits", ["calories", "kilojoules"]),
+    },
   },
 
-  template: '<PremiumRecipeCard :isFavorite="isFavorite"/>',
+  template:
+    '<PremiumRecipeCard :isFavorite="isFavorite" :energyUnits="energyUnits"/>',
   methods: { action: action("clicked") },
 });

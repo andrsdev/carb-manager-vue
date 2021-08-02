@@ -4,13 +4,13 @@
       <img class="header__img" :src="data.image" :alt="data.title" />
       <div class="header__overlay"></div>
       <img
-        v-show="isFavorite"
+        v-if="isFavorite"
         class="header__heart-icon"
         alt="heart-button"
         src="../assets/heart-filled.svg"
       />
       <img
-        v-show="!isFavorite"
+        v-else
         class="header__heart-icon"
         alt="heart-button"
         src="../assets/heart-outline.svg"
@@ -33,7 +33,13 @@
         </div>
         <div class="icon_detail">
           <img alt="calories icon" src="../assets/cals.svg" />
-          <span>{{ data.energy }} Calories</span>
+          <span
+            >{{
+              this.energyUnits === "calories"
+                ? data.energy + " Calories"
+                : caloriesToKilojoules(data.energy) + " Kilojoules"
+            }}
+          </span>
         </div>
         <div class="nutrients">
           <NutrientsCount
@@ -50,6 +56,7 @@
 <script>
 import StarRating from "./StarRating.vue";
 import NutrientsCount from "./NutrientsCount.vue";
+import { caloriesToKilojoules } from "../utils/caloresToKilojoules";
 
 export default {
   components: {
@@ -59,7 +66,12 @@ export default {
 
   props: {
     isFavorite: {
-      type: Boolean
+      type: Boolean,
+      default: false
+    },
+    energyUnits: {
+      type: String,
+      default: "calories"
     }
   },
 
@@ -82,7 +94,9 @@ export default {
       } catch (error) {
         this.error = error;
       }
-    }
+    },
+
+    caloriesToKilojoules
   },
 
   created() {
