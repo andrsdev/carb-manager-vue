@@ -1,5 +1,7 @@
 <template>
-  <div v-if="data" class="card">
+  <div v-if="loading">Loading...</div>
+  <div v-else-if="error">Error: {{ this.error }}</div>
+  <div v-else-if="data" class="card">
     <div class="header">
       <img class="header__img" :src="data.image" :alt="data.title" />
       <div class="header__overlay"></div>
@@ -15,7 +17,7 @@
         alt="heart-button"
         src="../assets/heart-outline.svg"
       />
-      <div class="tag">
+      <div class="tag" v-if="data.isPremium">
         <img class="tag__icon" alt="trohpy icon" src="../assets/trophy.svg" />
         <span class="tag__text">Premium Recipe</span>
       </div>
@@ -51,6 +53,7 @@
       </div>
     </div>
   </div>
+  <div v-else>Error: API response with no data.</div>
 </template>
 
 <script>
@@ -89,11 +92,11 @@ export default {
       const url = "https://60c10ba2b8d367001755666e.mockapi.io/recipe/1";
       try {
         const response = await fetch(url).then(data => data.json());
-        console.log(response);
-
-        this.data = { ...response };
+        this.data = response;
       } catch (error) {
         this.error = error;
+      } finally {
+        this.loading = false;
       }
     },
     caloriesToKilojoules,
