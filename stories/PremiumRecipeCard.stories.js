@@ -22,6 +22,6 @@ export const Default = () => ({
   },
 
   template:
-    '<PremiumRecipeCard :isFavorite="isFavorite" :energyUnits="energyUnits"/>',
+    '<PremiumRecipeCard :isFavorite="isFavorite" :energyUnits="energyUnits" @click.native="action" />',
   methods: { action: action("clicked") },
 });

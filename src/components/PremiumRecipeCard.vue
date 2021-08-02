@@ -95,7 +95,6 @@ export default {
         this.error = error;
       }
     },
-
     caloriesToKilojoules
   },
 
