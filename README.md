@@ -99,10 +99,8 @@ yarn storybook
 yarn test:unit
 ```
 
-### Solution
+## Solution
 
 <img width="382" alt="Screen Shot 2021-08-02 at 10 02 23 PM" src="https://user-images.githubusercontent.com/34043452/127955882-8476d975-e37b-4727-b1c0-819753f0561b.png">
 
 <img width="1203" alt="Storybook" src="https://user-images.githubusercontent.com/34043452/127955891-98307d87-fcf7-4d4b-af51-68193cd0d91c.png">
-
-
