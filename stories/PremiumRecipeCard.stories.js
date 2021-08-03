@@ -1,19 +1,27 @@
 import { action } from "@storybook/addon-actions";
-import { withKnobs } from "@storybook/addon-knobs";
+import { withKnobs, boolean, select } from "@storybook/addon-knobs";
 
 import PremiumRecipeCard from "../src/components/PremiumRecipeCard.vue";
 
 export default {
   title: "PremiumRecipeCard",
   component: PremiumRecipeCard,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
 };
 
 export const Default = () => ({
   components: { PremiumRecipeCard },
+
   props: {
-    // Add your props here and hook them up to the template below
+    isFavorite: {
+      default: boolean("isFavorite", false),
+    },
+    energyUnits: {
+      default: select("energyUnits", ["calories", "kilojoules"]),
+    },
   },
-  template: '<PremiumRecipeCard @click="action" />',
-  methods: { action: action("clicked") }
+
+  template:
+    '<PremiumRecipeCard :isFavorite="isFavorite" :energyUnits="energyUnits" @click.native="action" />',
+  methods: { action: action("clicked") },
 });

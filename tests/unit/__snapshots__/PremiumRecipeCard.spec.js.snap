@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PremiumRecipeCard.vue renders correctly 1`] = `
+<div
+  class="card"
+>
+  <div
+    class="header"
+  >
+    <img
+      alt="Low Carb Buffalo Chicken Mac And Cheese W Smashed Cauliflower Medallions"
+      class="header__img"
+      src="https://images.carbmanager.com/iYKrSEf7P6EAGx3desxGmcPJTVea2lJoBiXom24tevA/resize:fit:535/L2Fzc2V0cy5jYXJibWFuYWdlci5jb20vby91c2VyJTJGNGdkMlJoRVpqM2NGR1NKWDVuYjhFQzROWjBEMiUyRmltYWdlcyUyRmJiNmExNjY4LTU1NDMtNGE3Ny1hMDQ0LWQ0ODVhM2U0ZDMwNS5qcGc_YWx0PW1lZGlh"
+    />
+     
+    <div
+      class="header__overlay"
+    />
+     
+    <img
+      alt="heart-button"
+      class="header__heart-icon"
+      src="../assets/heart-outline.svg"
+    />
+     
+    <div
+      class="tag"
+    >
+      <img
+        alt="trohpy icon"
+        class="tag__icon"
+        src="../assets/trophy.svg"
+      />
+       
+      <span
+        class="tag__text"
+      >
+        Premium Recipe
+      </span>
+    </div>
+  </div>
+   
+  <div
+    class="content"
+  >
+    <h3
+      class="content__title"
+    >
+      Low Carb Buffalo Chicken Mac And Cheese W Smashed Cauliflower Medallions
+    </h3>
+     
+    <div
+      class="rating"
+    >
+      <starrating-stub
+        score="4.5"
+      />
+       
+      <span
+        class="rating__count"
+      >
+        200 ratings
+      </span>
+    </div>
+     
+    <div
+      class="details"
+    >
+      <div
+        class="icon_detail"
+      >
+        <img
+          alt="clock icon"
+          src="../assets/clock.svg"
+        />
+         
+        <span>
+          1 h 15 min
+        </span>
+      </div>
+       
+      <div
+        class="icon_detail"
+      >
+        <img
+          alt="calories icon"
+          src="../assets/cals.svg"
+        />
+         
+        <span>
+          774 Calories
+        
+        </span>
+      </div>
+       
+      <div
+        class="nutrients"
+      >
+        <nutrientscount-stub
+          carbs="16"
+          fats="6"
+          proteins="20"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
